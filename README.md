@@ -100,9 +100,9 @@ show which examples reach each node.
 
 For a node with positive-class fraction \(p\), binary entropy is
 
-\[
+$$
 H(p) = -p \log_2(p) - (1-p)\log_2(1-p).
-\]
+$$
 
 The implementation defines entropy as zero when `p` is 0 or 1, since a pure
 node has no class uncertainty. Entropy is highest at `p = 0.5` (one bit), where
@@ -130,12 +130,12 @@ This lets each recursive step work with a subset of the original examples.
 For a candidate split, the child entropies are weighted by the fraction of
 examples that reach each child:
 
-\[
+$$
 H_{\mathrm{children}} =
 \frac{n_L}{n} H_L + \frac{n_R}{n} H_R,
 \qquad
 \mathrm{Gain} = H_{\mathrm{parent}} - H_{\mathrm{children}}.
-\]
+$$
 
 `weighted_entropy` and `information_gain` in `classification_tree.py`
 demonstrate these quantities for the root. `compute_information_gain` in
